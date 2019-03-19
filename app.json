@@ -1,0 +1,8 @@
+{
+  "name": "Start Bible Game: Node.js",
+  "description": "A base for my Bible game",
+  "repository": "https://github.com/Blubaugh09/jrgame",
+  "logo": "https://cdn.rawgit.com/heroku/node-js-getting-started/master/public/node.svg",
+  "keywords": ["bible", "node", "heroku"],
+  "image": "heroku/nodejs"
+}
