@@ -1,0 +1,2 @@
+# biblegame
+bible game setup
