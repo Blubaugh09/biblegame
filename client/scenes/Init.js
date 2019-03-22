@@ -2,7 +2,11 @@ import { Scene } from 'phaser';
 import { UP, LEFT, DOWN, RIGHT } from '../../shared/constants/directions';
 import { TOWN } from '../../shared/constants/scenes';
 import { INIT } from '../constants/scenes';
-import { MAP_TOWN, MAP_HOUSE_1, MAP_HOUSE_2, IMAGE_HOUSE, IMAGE_TOWN, IMAGE_PLAYER } from '../constants/assets';
+import { MAP_TOWN, MAP_HOUSE_1, MAP_HOUSE_2, MAP_HOUSE_4, IMAGE_HOUSE, IMAGE_TOWN, IMAGE_PLAYER } from '../constants/assets';
+
+
+
+
 
 class Init extends Scene {
     constructor() {
@@ -16,9 +20,14 @@ class Init extends Scene {
         this.load.tilemapTiledJSON(MAP_TOWN, 'assets/maps/town.json');
         this.load.tilemapTiledJSON(MAP_HOUSE_1, 'assets/maps/house-1.json');
         this.load.tilemapTiledJSON(MAP_HOUSE_2, 'assets/maps/house-2.json');
+        this.load.tilemapTiledJSON(MAP_HOUSE_4, 'assets/maps/house-4.json');
         
+         this.load.image('star', 'assets/sprites/star.png');
+        this.load.image('sky', 'assets/sprites/sky.png');
         this.load.spritesheet(IMAGE_HOUSE, 'assets/maps/house.png', { frameWidth: 32, frameHeight: 32 });
+        
         this.load.spritesheet(IMAGE_TOWN, 'assets/maps/town.png', { frameWidth: 32, frameHeight: 32 });
+        
         this.load.spritesheet(IMAGE_PLAYER, 'assets/sprites/player.png', { frameWidth: 32, frameHeight: 32 });
 
         /* this.load.audio('music-town', ['assets/music/town.mp3']); */
@@ -26,6 +35,21 @@ class Init extends Scene {
         this.load.on('progress', this.onLoadProgress, this);
         this.load.on('complete', this.onLoadComplete, this);
         this.createProgressBar();
+   //this.load.plugin('RandomNamePlugin', 'assets/plugins/phaser-ui-tools.js', true);
+ // load in our bullet sprite
+    this.load.spritesheet('bullet', 'assets/sprites/blueorb.png', { frameWidth: 844, frameHeight: 702 });
+      this.load.image('enemy', 'assets/sprites/ballBlack_04.png'); 
+        this.load.image('dot', 'assets/sprites/dot.png'); 
+         this.load.audio('theme', 'assets/audio/main-theme.mp3');
+       //  this.load.tilemapTiledJSON('map2', 'assets/maps/map2.json');
+        //this.load.image('blueLight', 'assets/sprites/blue.png');
+        
+        //////////MENU BUTTONS///////////
+        this.load.image('dot2', 'assets/menus/mark1Btn.png');
+        
+        //////////Bible Reading  Backgrounds///////////
+        this.load.image('mark1Background', 'assets/menus/mark1Background.png');
+        this.load.image('white', 'assets/sprites/white.png');
     }
 
     create() {
@@ -33,6 +57,7 @@ class Init extends Scene {
             this.music = this.sound.add('music-town', { loop: true });
             this.music.play();
         */
+       
 
         this.anims.create({
             key: LEFT,
@@ -61,6 +86,9 @@ class Init extends Scene {
             frameRate: 13,
             repeat: -1
         });
+        
+        
+
     }
 
     createProgressBar() {

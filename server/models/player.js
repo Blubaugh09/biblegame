@@ -1,6 +1,6 @@
 import BaseModel from '../utilities/base-model';
 import { NEW_PLAYER, ALL_PLAYERS, CHAT, KEY_PRESS, MOVE, STOP, REMOVE } from '../../shared/constants/actions/player';
-import { TOWN, HOUSE_1, HOUSE_2 } from '../../shared/constants/scenes';
+import { TOWN, HOUSE_1, HOUSE_2, HOUSE_3, MARK_1 } from '../../shared/constants/scenes';
 
 class Player extends BaseModel {
     static onConnect(io, socket) {
@@ -18,6 +18,7 @@ class Player extends BaseModel {
             for (let i in Player.list[room]) {
                 players.push(Player.list[room][i]);
             }
+             
 
             socket.emit(ALL_PLAYERS, players);
 
@@ -66,5 +67,7 @@ Player.list = {};
 Player.list[TOWN] = {};
 Player.list[HOUSE_1] = {};
 Player.list[HOUSE_2] = {};
+Player.list[HOUSE_3] = {};
+Player.list[MARK_1] = {};
 
 export default Player;

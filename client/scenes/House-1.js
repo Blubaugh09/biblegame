@@ -3,19 +3,40 @@ import { UP } from '../../shared/constants/directions';
 import { HOUSE_1, TOWN } from '../../shared/constants/scenes';
 import { MAP_HOUSE_1, IMAGE_HOUSE } from '../constants/assets';
 
+var stars;
+
 class House_1 extends BaseScene {
     constructor() {
         super(HOUSE_1);
     }
 
-    init() {
+    init(data) {
         super.init({ x: 240, y: 365, direction: UP });
+             console.log('inside HOUSE1');
+ 
     }
 
     create() {
         super.create(MAP_HOUSE_1, IMAGE_HOUSE, true);
         this.registerTilesetAnimation(this.layers[2]);
+       stars = this.physics.add.group({
+				key: 'star',
+				repeat: 4,
+				setXY: { x: 125, y: 175, stepX: 60 }
+			});
+
+        var scoreBox = new Phaser.Geom.Rectangle(45, 345, 180, 35);
+
+    var graphics = this.add.graphics({ fillStyle: { color: 0x0000aa } });
+    graphics.fillRectShape(scoreBox);
+        
+        graphics.setScrollFactor(0);
+        
+        
+        
     }
+    
+    
 
     registerCollision() {
         this.layers[1].setCollisionBetween(0, 100);
@@ -30,7 +51,16 @@ class House_1 extends BaseScene {
                 this.onChangeScene();
             }
         });
+        
+        //Run Collisions with objects Jeff Add On
+        this.physics.add.collider(player, stars, (sprite, star) => {
+           console.log('star touched');
+            star.disableBody(true, true);
+            this.updateScore();
+        });
     }
+    
+  
 }
 
 export default House_1;
