@@ -4,4 +4,5 @@ export const IMAGE_TOWN = 'town';
 
 export const MAP_HOUSE_1 = 'map-house-1';
 export const MAP_HOUSE_2 = 'map-house-2';
+export const MAP_HOUSE_4 = 'map-house-4';
 export const MAP_TOWN = 'map-town';
