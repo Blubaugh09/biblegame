@@ -65,28 +65,24 @@ class Player {
         this.players[this.socket.id].body.velocity.x = -SPEED;
         this.players[this.socket.id].anims.play(LEFT, true);
         this.socket.emit(KEY_PRESS, LEFT, { x: this.players[this.socket.id].x, y: this.players[this.socket.id].y });
-        this.direction = 'left';
     }
 
     right() {
         this.players[this.socket.id].body.velocity.x = SPEED;
         this.players[this.socket.id].anims.play(RIGHT, true);
         this.socket.emit(KEY_PRESS, RIGHT, { x: this.players[this.socket.id].x, y: this.players[this.socket.id].y });
-        this.direction = 'right';
     }
 
     up() {
         this.players[this.socket.id].body.velocity.y = -SPEED;
         this.players[this.socket.id].anims.play(UP, true);
         this.socket.emit(KEY_PRESS, UP, { x: this.players[this.socket.id].x, y: this.players[this.socket.id].y });
-        this.direction = 'up';
     }
 
     down() {
         this.players[this.socket.id].body.velocity.y = SPEED;
         this.players[this.socket.id].anims.play(DOWN, true);
         this.socket.emit(KEY_PRESS, DOWN, { x: this.players[this.socket.id].x, y: this.players[this.socket.id].y });
-        this.direction = 'down';
     }
 
     stop() {

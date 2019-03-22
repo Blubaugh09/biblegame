@@ -7,9 +7,8 @@ canvas {
     margin: auto;
     display: block;
     position: absolute;
-    top: 0px;
-    /* normally -150px; */
-    bottom: 300;
+    top: -150px;
+    bottom: 0;
     left: 0;
     right: 0;
     border: 2px solid black;
@@ -17,7 +16,7 @@ canvas {
 
 #control {
     position: absolute;
-    top: 500px;
+    top: 300px;
     bottom: 0;
     left: 0;
     right: 250px;
@@ -29,7 +28,7 @@ canvas {
 
 #chat {
     position: absolute;
-    top: 500px;
+    top: 300px;
     bottom: 0;
     left: 100px;
     right: 0;
