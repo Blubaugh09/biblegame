@@ -1,6 +1,6 @@
 # JRGame
 
-<a href="https://jrgame.herokuapp.com/">Demo</a>
+<a href="https://bible-learning.herokuapp.com/">Demo</a>
 
 ## Built With
 - Node.js (Express.js)
@@ -8,8 +8,11 @@
 - Phaser 3
 - Parcel
 
-## Author
+## Original Author
 [Jacky Rusly](https://www.jackyrusly.web.id)
+
+## Bible Portion Author
+[Blubaugh]
 
 ## License
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT)
